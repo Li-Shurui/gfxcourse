@@ -1,0 +1,16 @@
+# 第 13 课：用 Whitted 光线追踪一个网格。
+camera 2.15 0.95 2.55  0 0.32 0.05  0 1 0  34
+ambient 0.03 0.03 0.035
+background 18 22 30
+sky 1
+
+point_light 1.6 2.6 1.4  1 0.97 0.9  28
+point_light -2.2 1.8 1.2  0.7 0.75 1  10
+
+material floor diffuse 0.72 0.7 0.64 assets/textures/checker.ppm
+material gold metal 0.95 0.78 0.34 0.04
+material clay diffuse 0.72 0.24 0.16 none
+
+mesh floor 0 0 0  2.6 1 2.6  0  assets/meshes/plane.obj
+mesh gold 0.15 0.36 0.05  1.05 1.05 1.05  24  assets/meshes/torus.obj
+sphere clay -0.95 0.38 0.15  0.38

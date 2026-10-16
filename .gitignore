@@ -1,0 +1,14 @@
+build/
+out/
+output/
+cmake-build-*/
+.vs/
+.idea/
+.cache/
+*.user
+compile_commands.json
+*.exe
+*.obj
+!assets/meshes/*.obj
+*.o
+tmp_*

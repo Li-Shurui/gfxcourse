@@ -1,0 +1,19 @@
+# 康奈尔盒。光栅器用 point_light，路径追踪用 area_light 和灯片网格。
+camera 0 0.95 3.2  0 0.86 0  0 1 0  36
+ambient 0.025 0.025 0.028
+background 0 0 0
+sky 0
+
+point_light 0 1.75 2.4  1 1 1  10
+area_light -0.22 1.995 -0.22  0.44 0 0  0 0 0.44  22 22 22
+
+material red diffuse 0.72 0.12 0.08 none
+material green diffuse 0.12 0.62 0.16 none
+material white diffuse 0.73 0.73 0.73 none
+material light emissive 22 22 22
+material gold metal 0.92 0.84 0.62 0.05
+material glass dielectric 0.98 0.98 0.98 1.5
+
+mesh white 0 0 0  1 1 1  0  assets/meshes/cornell.obj
+sphere gold -0.45 0.32 0.28  0.32
+sphere glass 0.40 0.32 0.05  0.32
