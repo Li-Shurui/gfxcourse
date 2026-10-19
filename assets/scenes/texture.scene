@@ -1,0 +1,22 @@
+# 纹理专场：地面瓷砖、渐变墙、UV 网格墙、棋盘球、UV 网格立方体。
+camera 0 1.15 3.6  0 0.75 0  0 1 0  36
+ambient 0.06 0.06 0.065
+background 24 26 34
+sky 0
+
+point_light 1.6 2.8 2.2  1 0.97 0.9  26
+point_light -2 1.6 1.8  0.6 0.7 1  10
+area_light -0.8 3.2 -0.4  1.6 0 0  0 0 1.6  7 7 7
+
+material floor diffuse 0.9 0.9 0.88 assets/textures/tiles.ppm
+material rainbow diffuse 1 1 1 assets/textures/gradient.ppm
+material grid diffuse 1 1 1 assets/textures/uvgrid.ppm
+material checker diffuse 1 1 1 assets/textures/checker.ppm
+material clay diffuse 0.7 0.3 0.2 none
+
+mesh floor 0 0 0  2.6 1 2.6  0  assets/meshes/plane.obj
+mesh rainbow 0 0 -1.9  1.9 1 1  0  assets/meshes/wall.obj
+mesh grid -1.9 0 0  1.9 1 1  90  assets/meshes/wall.obj
+mesh checker -0.75 0.5 0.15  0.5 0.5 0.5  0  assets/meshes/sphere.obj
+mesh grid 0.75 0.42 0.3  0.42 0.42 0.42  24  assets/meshes/cube.obj
+mesh clay 0 0.25 1.15  0.5 0.5 0.5  0  assets/meshes/cone.obj

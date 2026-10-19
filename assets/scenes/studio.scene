@@ -7,6 +7,7 @@ sky 0
 
 point_light 2.4 3.6 2.2  1 0.96 0.88  34
 point_light -2.6 2.1 2.6  0.65 0.75 1  16
+area_light -1 3.8 -0.6  2 0 0  0 0 2  7 6.8 6.4
 
 material clay diffuse 0.74 0.30 0.18 none
 material glaze diffuse 0.28 0.46 0.82 none

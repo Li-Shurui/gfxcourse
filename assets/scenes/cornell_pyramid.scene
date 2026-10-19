@@ -1,0 +1,23 @@
+# 康奈尔盒里的多材质锥体：一个 OBJ 同时带漫反射、金属、玻璃（usemtl 覆盖）。
+camera 0 0.95 3.2  0 0.86 0  0 1 0  36
+ambient 0.025 0.025 0.028
+background 0 0 0
+sky 0
+
+point_light 0 1.75 2.4  1 1 1  10
+area_light -0.22 1.995 -0.22  0.44 0 0  0 0 0.44  22 22 22
+
+material red diffuse 0.72 0.12 0.08 none
+material green diffuse 0.12 0.62 0.16 none
+material white diffuse 0.73 0.73 0.73 none
+material light emissive 22 22 22
+material side_a diffuse 0.85 0.55 0.2 none
+material side_b diffuse 0.3 0.55 0.85 none
+material side_c metal 0.9 0.85 0.6 0.12
+material side_d dielectric 0.95 0.95 0.95 1.5
+material base diffuse 0.6 0.6 0.62 none
+material gold metal 0.92 0.84 0.62 0.05
+
+mesh white 0 0 0  1 1 1  0  assets/meshes/cornell.obj
+mesh base 0.05 0 0.1  0.95 0.95 0.95  25  assets/meshes/pyramid.obj
+sphere gold -0.55 0.24 0.5  0.24

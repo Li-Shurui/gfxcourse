@@ -1,6 +1,7 @@
 build/
 out/
 output/
+rust/target/
 cmake-build-*/
 .vs/
 .idea/
