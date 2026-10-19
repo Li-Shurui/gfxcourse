@@ -1,0 +1,7 @@
+[package]
+name = "gfxcourse"
+version = "0.1.0"
+edition = "2021"
+description = "A step-by-step software rasterizer and path tracer course"
+
+[dependencies]
