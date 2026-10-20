@@ -38,15 +38,13 @@ inline Barycentric barycentric(Vec2 p, Vec2 a, Vec2 b, Vec2 c) {
   Vec2 s0 = a;
   Vec2 s1 = b;
   Vec2 s2 = c;
+  if (signed_area < 0.0f) {
+    std::swap(s1, s2);
+  }
   float e0 = edge(s1, s2, p);
   float e1 = edge(s2, s0, p);
   float e2 = edge(s0, s1, p);
-  if (signed_area < 0.0f) {
-    std::swap(s1, s2);
-    e0 = edge(s1, s2, p);
-    e1 = edge(s2, s0, p);
-    e2 = edge(s0, s1, p);
-  }
+
   const auto accept = [](float w, bool top_left) { return w > 0.0f || (w == 0.0f && top_left); };
   out.inside = accept(e0, is_top_left(s1, s2)) && accept(e1, is_top_left(s2, s0)) &&
                accept(e2, is_top_left(s0, s1));

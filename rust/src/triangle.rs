@@ -34,11 +34,13 @@ pub fn barycentric(p: Vec2, a: Vec2, b: Vec2, c: Vec2) -> Barycentric {
     let w1 = edge(c, a, p) * inv_area;
     let w2 = edge(a, b, p) * inv_area;
 
-    let (s0, s1, s2, e0, e1, e2) = if signed_area < 0.0 {
-        (a, c, b, edge(c, b, p), edge(b, a, p), edge(a, c, p))
-    } else {
-        (a, b, c, edge(b, c, p), edge(c, a, p), edge(a, b, p))
-    };
+    let (s0, mut s1, mut s2) = (a, b, c);
+    if signed_area < 0.0 {
+        std::mem::swap(&mut s1, &mut s2);
+    }
+    let e0 = edge(s1, s2, p);
+    let e1 = edge(s2, s0, p);
+    let e2 = edge(s0, s1, p);
     let accept = |w: f32, top_left: bool| w > 0.0 || (w == 0.0 && top_left);
     let inside = accept(e0, is_top_left(s1, s2)) && accept(e1, is_top_left(s2, s0)) && accept(e2, is_top_left(s0, s1));
     Barycentric { w0, w1, w2, inside }
